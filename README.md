@@ -2,9 +2,13 @@
 
 Welcome to the Food Recipe web app! This is a platform for sharing and discovering delicious recipes from all around the world.
 
-## Getting Started
+## Usage
 
-To use the app, simply create an account and start browsing recipes. You can search by ingredients, cuisine, dietary restrictions, and more. If you find a recipe you like, you can save it to your personal recipe collection or share it with your friends.
+- Users can browse and search for recipes on the home page.
+- To create a new recipe, users must register an account and log in.
+- Once logged in, users can click the "Create Recipe" button and fill out the recipe form.
+- Users can also view and edit their own recipes by clicking on them in the "My Recipes" section of the navigation menu.
+- Users can view and edit their profile information by clicking on the "Profile" button in the navigation menu.
 
 ## Contributing
 
