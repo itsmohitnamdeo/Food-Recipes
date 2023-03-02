@@ -1,0 +1,27 @@
+{% extends "recipes/base.html" %}
+
+{% block content %}
+
+<style>
+  h1 {
+    color: #0a0000;
+  }
+</style>
+
+<h1 style="font-size: 3rem; font-family: 'Helvetica Neue', sans-serif; text-shadow: 2px 2px #50cdff;">Explore Our Delicious Recipes:</h1>
+
+{% for recipe in recipes %}
+
+<div class="card my-4">
+  <div class="card-body">
+    <h5 class="card-title">{{ recipe.title }}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">By {{ recipe.author }}</h6>
+    <p class="card-text">{{ recipe.description }}</p>
+    <h6 class="card-subtitle mb-2 text-muted">
+      Last Updated: {{ recipe.updated_at|date:"F d, Y" }}
+    </h6>
+    <a href="{% url 'recipes-detail' recipe.pk %}" class="btn btn-primary">View Recipe</a>
+  </div>
+</div>
+{% endfor %}
+{% endblock content %}

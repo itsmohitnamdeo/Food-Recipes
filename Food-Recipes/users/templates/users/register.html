@@ -1,0 +1,37 @@
+{% extends "recipes/base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container">
+  <form method="POST">
+    {% csrf_token %}
+    <fieldset class="form-group">
+      <legend class="border-bottom mb-4"><i class="fas fa-user-plus"></i> Sign Up!</legend>
+      <div class="row">
+        <div class="col-md-6">
+          {{ form.username|as_crispy_field }}
+        </div>
+        <div class="col-md-6">
+          {{ form.email|as_crispy_field }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          {{ form.password1|as_crispy_field }}
+        </div>
+        <div class="col-md-6">
+          {{ form.password2|as_crispy_field }}
+        </div>
+      </div>
+    </fieldset>
+    <div class="form-group py-3">
+      <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-user-plus"></i> Sign Up</button>
+    </div>
+  </form>
+  <div class="border-top pt-3">
+    <p class="mb-0">Already have an account? <a href="{% url 'user-login' %}" class="text-primary">Log in</a>.</p>
+  </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,30 @@
+{% extends "recipes/base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container my-5">
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          {% if user.profile.image %}
+            <img src="{{ user.profile.image.url }}" class="rounded-circle mb-4" alt="{{ user.username }}'s profile picture">
+          {% else %}
+            <div class="d-flex justify-content-center align-items-center bg-light rounded-circle mb-4" style="height: 200px; width: 200px;">
+              <img src="https://via.placeholder.com/200x200.png?text={{ user.username|first }}" class="img-fluid rounded-circle">
+            </div>
+          {% endif %}
+          <h1 class="card-title text-center">{{ user.username }}</h1>
+        </div>
+        <div class="col-md-8">
+          <h4>About Me</h4>
+          <p class="card-text">Hi there! I'm a food enthusiast who loves to cook and experiment with different flavors and ingredients. Through my website, I share my passion for food and inspire others to explore new recipes and techniques. Join me on this culinary journey and let's explore the world of food together!</p>
+        </div>
+      </div>
+      <hr>
+    </div>
+  </div>
+</div>
+{% endblock content %}

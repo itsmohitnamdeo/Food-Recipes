@@ -1,0 +1,28 @@
+{% extends "recipes/base.html" %}
+
+<!-- -->
+{% load crispy_forms_tags %}
+
+<!-- -->
+{% block content %}
+
+<div class="container">
+  <form method="POST">
+    {% csrf_token %}
+    <fieldset class="form-group">
+      <legend class="mb-4" style="font-size: 2.5rem; font-weight: bold; color: #333;">Are you sure you want to delete?</legend>
+      <h1 style="font-size: 3rem; font-weight: bold; color: #fff;">{{object}}</h1>
+      {{ form|crispy }}
+    </fieldset>
+    <div class="form-group py-3">
+      <input class="btn btn-outline-danger" type="submit" value="Delete" />
+    </div>
+  </form>
+  <div class="border-top pt-3">
+    <a class="text-muted" href="{% url 'recipes-home' %}" style="font-size: 1.2rem; color: #333;"
+      >Cancel</a
+    >
+  </div>
+</div>
+<!-- -->
+{% endblock content %}
